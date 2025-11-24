@@ -1,4 +1,4 @@
-# 🏨 QUICKSTAY -  Hotel Booking Website — MERN Stack
+# 🏨 QUICKSTAY -  Hotel Booking Website (MERN Stack)
 
 A complete hotel booking system built using the **MERN Stack** with user authentication, email notifications, admin dashboard, online payments, and deployment on Vercel.
 
@@ -231,6 +231,10 @@ EMAIL_PASS=your_app_password
 ## 📸 Screenshots
 
 <img width="1888" height="894" alt="image" src="https://github.com/user-attachments/assets/8afeb5cb-9860-44ad-a405-67d260459caf" />
+<img width="1879" height="897" alt="image" src="https://github.com/user-attachments/assets/04529346-05cf-4292-bb4f-24220f1fd77e" />
+<img width="1875" height="609" alt="image" src="https://github.com/user-attachments/assets/06321c08-7bfd-4adc-97e2-e179cdad08e6" />
+
+
 
 ---
 
