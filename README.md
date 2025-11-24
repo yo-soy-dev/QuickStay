@@ -228,7 +228,7 @@ EMAIL_PASS=your_app_password
 
 ---
 
-## 📸 Screenshots
+## 📸 UI Preview
 
 <img width="1888" height="894" alt="image" src="https://github.com/user-attachments/assets/8afeb5cb-9860-44ad-a405-67d260459caf" />
 <img width="1879" height="897" alt="image" src="https://github.com/user-attachments/assets/04529346-05cf-4292-bb4f-24220f1fd77e" />
