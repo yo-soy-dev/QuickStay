@@ -230,7 +230,7 @@ EMAIL_PASS=your_app_password
 
 ## 📸 Screenshots
 
-(Add when project UI is ready)
+<img width="1888" height="894" alt="image" src="https://github.com/user-attachments/assets/8afeb5cb-9860-44ad-a405-67d260459caf" />
 
 ---
 
