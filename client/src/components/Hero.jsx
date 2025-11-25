@@ -5,7 +5,7 @@ import { useAppContext } from "../conext/AppContext";
 
 const Hero = () => {
 
-  const {navigate, getToken, axios, SetSearchedCities} = useAppContext()
+  const {navigate, getToken, axios, setSearchedCities} = useAppContext()
   const [destination, setDestination] = useState("")
 
   const onSearch = async (e) => {
