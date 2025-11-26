@@ -91,8 +91,15 @@ export const createBooking = async (req, res) => {
 
     res.json({ success: true, message: "Booking created successfully" });
   } catch (error) {
-    console.error("Booking creation failed:", error.message);
-    res.json({ success: false, message: "Failed to create booking" });
+    // console.error("Booking creation failed:", error.message);
+    // res.json({ success: false, message: "Failed to create booking" });
+     console.error("Booking creation failed:", error);
+  return res.status(500).json({
+    success: false,
+    message: "Failed to create booking",
+    error: error.message,
+    stack: error.stack,
+  })
   }
 };
 
@@ -105,7 +112,14 @@ export const getUserBookings = async (req, res) => {
 
     res.json({ success: true, bookings });
   } catch (error) {
-    res.json({ success: false, message: "Failed to fetch bookings" });
+    // res.json({ success: false, message: "Failed to fetch bookings" });
+     console.error("Booking creation failed:", error);
+  return res.status(500).json({
+    success: false,
+    message: "Failed to create booking",
+    error: error.message,
+    stack: error.stack,
+  })
   }
 };
 
@@ -129,7 +143,14 @@ export const getHotelBookings = async (req, res) => {
       dashboardData: { totalBookings, totalRevenue, bookings },
     });
   } catch (error) {
-    res.json({ success: false, message: "Failed to fetch bookings" });
+    // res.json({ success: false, message: "Failed to fetch bookings" });
+     console.error("Booking creation failed:", error);
+  return res.status(500).json({
+    success: false,
+    message: "Failed to create booking",
+    error: error.message,
+    stack: error.stack,
+  })
   }
 };
 

@@ -8,6 +8,7 @@ import {
 } from '../controllers/bookingController.js';
 
 import { protect } from '../middleware/authMiddleware.js';
+import { stripeWebhooks } from '../controllers/stripeWebhooks.js';
 
 const bookingRouter = express.Router();
 
@@ -17,4 +18,5 @@ bookingRouter.get('/user', protect, getUserBookings);
 bookingRouter.get('/hotel', protect, getHotelBookings);
 
 bookingRouter.post('/stripe-payment', protect, stripePayment);
+
 export default bookingRouter;
