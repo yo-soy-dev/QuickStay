@@ -4,8 +4,6 @@ import Hotel from "../models/Hotel.js";
 import Room from "../models/Room.js";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-
 const checkAvailability = async ({ checkInDate, checkOutDate, room }) => {
   try {
     const bookings = await Booking.find({
@@ -166,6 +164,8 @@ export const stripePayment = async (req, res) => {
     const roomData = await Room.findById(booking.room).populate("hotel");
     const totalPrice = booking.totalPrice;
     const { origin } = req.headers;
+
+    const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY);
 
     // const session = await stripe.checkout.sessions.create({
       const line_items = [
