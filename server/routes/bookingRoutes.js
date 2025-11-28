@@ -8,7 +8,7 @@ import {
 } from '../controllers/bookingController.js';
 
 import { protect } from '../middleware/authMiddleware.js';
-import { stripeWebhooks } from '../controllers/stripeWebhooks.js';
+// import { stripeWebhooks } from '../controllers/stripeWebhooks.js';
 
 const bookingRouter = express.Router();
 
