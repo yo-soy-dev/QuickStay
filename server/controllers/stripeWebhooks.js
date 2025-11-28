@@ -34,6 +34,7 @@ export const stripeWebhooks = async (request, response) => {
       bookingId,
       { isPaid: true, paymentMethod: "Stripe" }
     );
+  }
 
   response.json({ received: true });
 };
