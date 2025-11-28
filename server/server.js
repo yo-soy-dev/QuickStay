@@ -19,7 +19,7 @@ const app = express();
 app.use(cors());
 
 app.post(
-  "/api/stripe/webhook",
+  "/api/stripe",
   express.raw({ type: "application/json" }),
   stripeWebhooks
 );
