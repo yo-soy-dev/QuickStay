@@ -60,24 +60,43 @@ export const stripeWebhooks = async (request, response) => {
     return response.status(400).send(`Webhook Error: ${err.message}`);
   }
 
-  if (event.type === "checkout.session.completed") {
-    const session = event.data.object;
+  // if (event.type === "checkout.session.completed") {
+  //   const session = event.data.object;
 
-    const bookingId = session.metadata?.bookingId;
-    if (!bookingId) {
-      console.log("⚠️ No bookingId in metadata");
-      return response.json({ received: true });
-    }
+  //   const bookingId = session.metadata?.bookingId;
+  //   if (!bookingId) {
+  //     console.log("⚠️ No bookingId in metadata");
+  //     return response.json({ received: true });
+  //   }
 
-    await Booking.findByIdAndUpdate(bookingId, {
-      isPaid: true,
-      paymentMethod: "Stripe",
-    });
+  //   await Booking.findByIdAndUpdate(bookingId, {
+  //     isPaid: true,
+  //     paymentMethod: "Stripe",
+  //   });
 
-    console.log("✅ Booking marked as paid:", bookingId);
-  } else {
-    console.log("Unhandled event type:", event.type);
-  }
+  //   console.log("✅ Booking marked as paid:", bookingId);
+  // } else {
+  //   console.log("Unhandled event type:", event.type);
+  // }
+
+    if (event.type === "checkout.session.completed") {
+  const session = event.data.object;
+
+  console.log("🚀 WEBHOOK HIT HO GAYA");
+  console.log("Webhook metadata:", session.metadata);
+
+  const bookingId = session.metadata?.bookingId;
+  console.log("BookingId received:", bookingId);
+
+  await Booking.findByIdAndUpdate(
+    bookingId,
+    { isPaid: true, paymentMethod: "Stripe" }
+  );
+
+  const updatedBooking = await Booking.findById(bookingId);
+  console.log("Updated booking in DB:", updatedBooking);
+}
+
 
   response.json({ received: true });
 };
