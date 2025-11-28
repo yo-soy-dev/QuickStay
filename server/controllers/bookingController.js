@@ -180,7 +180,7 @@ export const stripePayment = async (req, res) => {
           quantity: 1,
         },
       ]
-    const sessions = await stripeInstance.checkout.sessions.create({
+    const session = await stripeInstance.checkout.sessions.create({
       line_items,
       mode: "payment",
       success_url: `${origin}/loader/my-bookings`,
