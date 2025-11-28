@@ -165,7 +165,7 @@ export const stripePayment = async (req, res) => {
     const totalPrice = booking.totalPrice;
     const { origin } = req.headers;
 
-    const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY);
+    const stripeInstance = new Stripe(process.env.STRIPE_SECRET_KEY);
 
     // const session = await stripe.checkout.sessions.create({
       const line_items = [
