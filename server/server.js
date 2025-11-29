@@ -19,7 +19,7 @@ const app = express();
 app.use(cors());
 
 app.post(
-  "/api/clerk/webhook",
+  "/api/clerk",
   express.raw({ type: "application/json" }),
   clerkWebhooks
 );
