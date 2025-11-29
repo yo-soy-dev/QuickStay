@@ -218,7 +218,7 @@ const RoomDetails = () => {
 
           <button
             type="submit"
-            className="bg-blue-600 hover:bg-primary-dull active:scale-95 transition-all text-white rounded-md max-md:w-full max-md:mt-6 md:px-25 py-3 md:py-4 text-base cursor-pointer"
+            className="bg-blue-600 hover:bg-blue-600/70 active:scale-95 transition-all text-white rounded-md max-md:w-full max-md:mt-6 md:px-25 py-3 md:py-4 text-base cursor-pointer"
             // className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 active:scale-95 transition-all text-white font-semibold rounded-xl max-md:w-full max-md:mt-6 md:px-10 py-3 md:py-4 text-base shadow-md shadow-blue-300"
           >
             {isAvailable ? "Book Now" : "Check Availability"}
@@ -261,7 +261,7 @@ const RoomDetails = () => {
               </div>
             </div>
           </div>
-          <button className="px-6 py-2.5 mt-4 rounded text-white bg-primary hover:bg-primary-dull transition-all cursor-pointer">
+          <button className="px-6 py-2.5 mt-4 rounded text-white bg-blue-600 hover:bg-blue-600/70 transition-all cursor-pointer">
             Contact Now
           </button>
         </div>
