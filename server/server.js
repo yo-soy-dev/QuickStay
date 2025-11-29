@@ -19,6 +19,13 @@ const app = express();
 app.use(cors());
 
 app.post(
+  "/api/clerk/webhook",
+  express.raw({ type: "application/json" }),
+  clerkWebhooks
+);
+
+
+app.post(
   "/api/stripe",
   express.raw({ type: "application/json" }),
   stripeWebhooks
@@ -27,7 +34,7 @@ app.post(
 app.use(express.json());
 app.use(clerkMiddleware());
 
-app.use("/api/clerk", clerkWebhooks);
+// app.use("/api/clerk", clerkWebhooks);
 app.use("/api/user", userRouter);
 app.use("/api/hotels", hotelRouter);
 app.use("/api/rooms", roomRouter);
