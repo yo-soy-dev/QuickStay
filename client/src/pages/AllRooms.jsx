@@ -79,26 +79,26 @@ const AllRooms = () => {
     return room.hotel.city.toLowerCase().includes(destination.toLowerCase());
   };
 
-  // const filteredRooms = useMemo(() => {
-  //   return rooms
-  //     .filter((room) => matchesRoomType(room) && matchesPriceRange(room) && filterDestination(room))
-  //     .sort(sortRooms);
-  // }, [rooms, selectedFilters, selectedSort, searchParams]);
+  const filteredRooms = useMemo(() => {
+    return rooms
+      .filter((room) => matchesRoomType(room) && matchesPriceRange(room) && filterDestination(room))
+      .sort(sortRooms);
+  }, [rooms, selectedFilters, selectedSort, searchParams]);
 
- const filteredRooms = useMemo(() => {
-  let list = rooms.filter(room => 
-    matchesRoomType(room) && matchesPriceRange(room)
-  );
+//  const filteredRooms = useMemo(() => {
+//   let list = rooms.filter(room => 
+//     matchesRoomType(room) && matchesPriceRange(room)
+//   );
 
-  // apply destination filter strictly
-  const destination = searchParams.get("destination");
-  if (destination) {
-    list = list.filter(room => filterDestination(room));
-  }
+//   // apply destination filter strictly
+//   const destination = searchParams.get("destination");
+//   if (destination) {
+//     list = list.filter(room => filterDestination(room));
+//   }
 
-  // apply sorting
-  return list.sort(sortRooms);
-}, [rooms, selectedFilters, selectedSort, searchParams]);
+//   // apply sorting
+//   return list.sort(sortRooms);
+// }, [rooms, selectedFilters, selectedSort, searchParams]);
 
 
 
